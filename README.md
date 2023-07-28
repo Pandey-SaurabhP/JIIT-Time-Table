@@ -9,6 +9,6 @@ Step 1 : Clone JIIT-Time-Table into your local computer
 
 Step 2 : Run the following command in bash or terminal --
 
-          path/IIT-Time-Table$ flask --app app run
+          path/JIIT-Time-Table$ flask --app app run
           
 Step 3 : Open JIIT-Time-Table/public/index.html
