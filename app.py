@@ -13,6 +13,8 @@ def get_data():
         key = request.get_json()
         batchData = getBatchDetails(data, key)
 
+        print('Received inbound request : ', key)
+
         return jsonify((batchData))
 
     except Exception as e:

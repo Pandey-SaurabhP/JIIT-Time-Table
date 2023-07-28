@@ -11,6 +11,8 @@ function postData() {
 
     const jsonData = JSON.stringify(data);
 
+    console.log(jsonData);
+
     fetch(url, {
         method: 'POST',
         headers: {

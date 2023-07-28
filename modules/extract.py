@@ -5,7 +5,6 @@ import re
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 def formatTextData(t, s):
-
     s = ''.join(s.split())
     s += '$'
 
@@ -32,9 +31,35 @@ def formatTextData(t, s):
     # print(obj)
     return obj
 
+def beautifyData(data):
+    ans = {}
+
+    for i in data:
+        for j in range(1, len(i)):
+            
+            lst = (i[0], j)
+
+            if lst in ans:
+                ans[lst].append(i[j])
+            else:
+                ans[lst] = [i[j]]
+
+    return ans
+
+def loadData():
+    data_list = []
+    
+    with open('dataFiles/data.csv', mode='r') as file:
+    
+        csv_reader = csv.reader(file)
+        header = next(csv_reader, None)
+    
+        for row in csv_reader:
+            data_list.append(row)
+
+    return beautifyData(data_list)
 
 def reformat(a):
-
     ans = []
 
     timeSlots = [[]]
@@ -70,9 +95,7 @@ def reformat(a):
         
         ans.append(tmpPush)
     
-    # print(ans)
     return ans
-
 
 def getBatchDetails(data, key):
     batch = key['input']
@@ -99,31 +122,3 @@ def getBatchDetails(data, key):
     formattedAns = list(formattedAns[days.index(day) + 1])
     
     return formattedAns
-
-def beautifyData(data):
-    ans = {}
-
-    for i in data:
-        for j in range(1, len(i)):
-            
-            lst = (i[0], j)
-
-            if lst in ans:
-                ans[lst].append(i[j])
-            else:
-                ans[lst] = [i[j]]
-
-    return ans
-
-def loadData():
-    data_list = []
-    
-    with open('dataFiles/data.csv', mode='r') as file:
-    
-        csv_reader = csv.reader(file)
-        header = next(csv_reader, None)
-    
-        for row in csv_reader:
-            data_list.append(row)
-
-    return beautifyData(data_list)

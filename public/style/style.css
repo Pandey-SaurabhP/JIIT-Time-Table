@@ -109,7 +109,6 @@ input[type="text"] {
 }
 
 #myTable th {
-    background-color: #007bff;
     padding: 12px;
     text-align: center;
 }
@@ -120,13 +119,24 @@ input[type="text"] {
     font-weight: normal;
 
     border-bottom: 1px solid #d4d2d2;
+    border-top: 1px solid #d4d2d2;
+    border-left: 1px solid #d4d2d2;
+    border-right: 1px solid #d4d2d2;
+
+    font-size: 14px;
 }
 
 #myTable tr:hover {
-    background-color: #c1def4;
+    background-color: #e0f1ff;
 }
 
 #myTable td:first-child {
     /* font-weight: bold; */
     background-color: #e0f1ff;
+
+    border-bottom: 1px solid #afafaf;
+    border-top: 1px solid #afafaf;
+    border-left: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
 }
+
