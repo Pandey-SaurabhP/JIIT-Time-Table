@@ -58,7 +58,7 @@ def reformat(a):
         
         dict = {}
         for j in range(1, 9):
-            dict[j] = [timeSlots[j]]
+            dict[j] = [timeSlots[j], '', '', '', '']
 
         for j in a[i]:
             if(len(j) != 1):

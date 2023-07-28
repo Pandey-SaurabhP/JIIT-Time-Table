@@ -6,7 +6,9 @@
 </head>
 <body>
 
-    <div>
+    <div class = 'designation'>Handcrafted with ❤️ by Saurabh Pandey</div>
+
+    <div class = 'dayBar'>
         <select type = 'text' id = 'day'>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -15,12 +17,12 @@
             <option value="Friday">Friday</option>
             <option value="Saturday">Saturday</option>
         </select>
-        <button onclick="autoDetect()">Auto</button> 
+        <button onclick="autoDetect()">Auto Detect</button> 
     </div>
     
-    <div>
-        <input type="text" id = 'inp'>
-        <button onclick="postData()">Get Data</button>
+    <div class = 'batchBar'>
+        <input type="text" id = 'inp' placeholder="Enter Batch">
+        <button onclick="postData()">Go</button>
     </div>
 
     <table id = 'myTable'></table>

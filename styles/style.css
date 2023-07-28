@@ -1,15 +1,132 @@
-.table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+body {
+    /* display:block; */
+    align-items: center;
+    height: 100vh; /* To center vertically as well */
+    position: fixed;
+    display: contents;
 }
 
-th, td{
+.designation{
+    display: flex;
+    justify-content: center; 
+    padding-top: 15px;
+    font-family: sans-serif;
+}
+
+.dayBar{
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.batchBar{
     padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+  background-color: #e1ecf4;
+  border-radius: 2px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+button:hover,
+button:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+button:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+select {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    height: 40px;
+    margin-right: 10px;
+}
+
+select option {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+select option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    margin-right: 10px;
+}
+
+#myTable {
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+#myTable th {
+    background-color: #007bff;
+    padding: 12px;
+    text-align: center;
+}
+
+#myTable td {
+    padding: 10px;
+    text-align: center;
+    font-weight: lighter;
+
+    border-bottom: 1px solid #d4d2d2;
+}
+
+#myTable tr:hover {
+    background-color: #c1def4;
+}
+
+#myTable td:first-child {
+    font-weight: normal;
+    background-color: #e0f1ff;
 }

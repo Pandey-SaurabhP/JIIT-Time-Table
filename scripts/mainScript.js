@@ -63,7 +63,7 @@ function generate(data){
     table.innerHTML = ""
 
     data.forEach(rowData => {
-        var row = document.createElement('tr');
+        var row = document.createElement('tbody');
 
         rowData.forEach(cellData => {
             var cell = document.createElement('tr');
@@ -83,6 +83,8 @@ function generate(data){
 
         table.appendChild(row);
     });
+
+    console.log(table)
 
     document.body.appendChild(table);
 }
