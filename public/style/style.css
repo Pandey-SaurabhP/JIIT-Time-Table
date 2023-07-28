@@ -1,5 +1,4 @@
 body {
-    /* display:block; */
     align-items: center;
     height: 100vh; /* To center vertically as well */
     position: fixed;
@@ -118,12 +117,14 @@ input[type="text"] {
     text-align: center;
     font-weight: normal;
 
-    border-bottom: 1px solid #d4d2d2;
-    border-top: 1px solid #d4d2d2;
-    border-left: 1px solid #d4d2d2;
-    border-right: 1px solid #d4d2d2;
+    border-bottom: 1px solid #afafaf;
+    border-top: 1px solid #afafaf;
+    border-left: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
 
     font-size: 14px;
+
+    border-radius: 2px;
 }
 
 #myTable tr:hover {
@@ -131,12 +132,26 @@ input[type="text"] {
 }
 
 #myTable td:first-child {
-    /* font-weight: bold; */
     background-color: #e0f1ff;
-
-    border-bottom: 1px solid #afafaf;
-    border-top: 1px solid #afafaf;
-    border-left: 1px solid #afafaf;
-    border-right: 1px solid #afafaf;
 }
 
+#myTable tr:first-child {
+    background-color: #e0f1ff;
+}
+
+#invalid{
+    color: #ff0000;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #39739d;
+    margin-left: 4px;
+    margin-top: 0px;
+    font-size: 16.45px;
+    font-family: sans-serif;
+}

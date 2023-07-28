@@ -3,6 +3,7 @@ function postData() {
     var day = document.getElementById('day');
 
     const url = 'https://ttjiit.onrender.com/';
+    // const url = 'http://127.0.0.1:5000/';
     const data = {
         input: inp.value,
         day: day.value
@@ -10,7 +11,7 @@ function postData() {
 
     const jsonData = JSON.stringify(data);
 
-    console.log(jsonData);
+    // console.log(jsonData);
 
     fetch(url, {
         method: 'POST',
@@ -22,7 +23,14 @@ function postData() {
     .then(response => response.text())
     .then(text => {
         dataArray = convertToLL(text)
-        generate(dataArray)
+
+        console.log(dataArray)
+        if(dataArray[0] == -1){
+            invalidInput()
+        }
+        else {
+            generate(dataArray)
+        }
 
     })
     .catch(error => console.error('Error:', error));
@@ -46,10 +54,20 @@ function convertToLL(text){
     return JSON.parse(dataString);
 }
 
+function invalidInput(){
+    var table = document.getElementById('myTable');
+    table.innerHTML = ""
+
+    var invalid = document.getElementById('invalid');
+    invalid.innerHTML = "Invalid Batch!"
+}
 
 function generate(data){
     var table = document.getElementById('myTable');
     table.innerHTML = ""
+
+    var invalid = document.getElementById('invalid');
+    invalid.innerHTML = ""
 
     data.forEach(rowData => {
         var row = document.createElement('tbody');
@@ -70,6 +88,7 @@ function generate(data){
             row.appendChild(cell);
         });
 
+        console.log(table)
         table.appendChild(row);
     });
 

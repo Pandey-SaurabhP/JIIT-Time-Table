@@ -28,7 +28,6 @@ def formatTextData(t, s):
     teacher = re.search('/(.*)\$', s)
     obj.append(teacher.group(1))
 
-    # print(obj)
     return obj
 
 def beautifyData(data):
@@ -97,9 +96,26 @@ def reformat(a):
     
     return ans
 
+def isCorrectBatch(batch):
+    batch = batch.upper()
+    batch = ''.join(batch.split())
+
+    batches = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 
+             'E1', 'E2', 'E3', 'E4', 'E5', 'E6']
+    
+    if batch in batches:
+        return batch
+    
+    return 'Invalid'
+    
+
 def getBatchDetails(data, key):
     batch = key['input']
     day = key['day']
+
+    batch = isCorrectBatch(batch)
+
+    if batch == 'Invalid': return -1
 
     ans = {}
     btch = batch
@@ -109,7 +125,6 @@ def getBatchDetails(data, key):
     
     for i in data.keys():
         for j in data[i]:
-
             if(len(j) < 5): 
                 ans[i[0]].append([i[1]])
                 continue
@@ -119,6 +134,14 @@ def getBatchDetails(data, key):
                     ans[i[0]].append([i[1], j])
 
     formattedAns = reformat(ans)
+
+    
     formattedAns = list(formattedAns[days.index(day) + 1])
+    formattedAns = [['Time', 'Type', 'Subject', 'Classroom', 'Teacher']] + formattedAns
+
+    print(formattedAns)
     
     return formattedAns
+
+data = loadData()
+getBatchDetails(data, {'day' : 'Monday', 'input' : 'F8'})
