@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from extract import getBatchDetails, loadData
+from modules.extract import getBatchDetails, loadData
 
 app = Flask(__name__)
 CORS(app)
@@ -11,9 +11,6 @@ data = loadData()
 def get_data():
     try:
         key = request.get_json()
-
-        print(key)
-
         batchData = getBatchDetails(data, key)
 
         return jsonify((batchData))

@@ -117,7 +117,7 @@ input[type="text"] {
 #myTable td {
     padding: 10px;
     text-align: center;
-    font-weight: lighter;
+    font-weight: normal;
 
     border-bottom: 1px solid #d4d2d2;
 }
@@ -127,6 +127,6 @@ input[type="text"] {
 }
 
 #myTable td:first-child {
-    font-weight: normal;
+    /* font-weight: bold; */
     background-color: #e0f1ff;
 }

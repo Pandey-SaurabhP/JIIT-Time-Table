@@ -7,9 +7,7 @@ function postData() {
     const data = {
         input: inp.value,
         day: day.value
-    };;
-    
-    // console.log(data);
+    };
 
     const jsonData = JSON.stringify(data);
 
@@ -22,15 +20,10 @@ function postData() {
     })
     .then(response => response.text())
     .then(text => {
-        console.log('Text : ' + text)
         dataArray = convertToLL(text)
-
-        console.log('Data Array : ' + dataArray)
-
         generate(dataArray)
 
     })
-
     .catch(error => console.error('Error:', error));
 }
 
@@ -40,17 +33,12 @@ function autoDetect(){
     var dayOfWeek = today.getDay();
     var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var todayDayName = daysOfWeek[dayOfWeek];
-
     var selectElement = document.getElementById('day');
-
     var optionIndex = Array.from(selectElement.options).findIndex(option => option.value === todayDayName);
     selectElement.selectedIndex = optionIndex;
 }
 
 function convertToLL(text){
-
-    // console.log(text)
-
     dataString = text;
     dataString = "[" + dataString.replace(/\]\s*,\s*\[/g, "],[") + "]";
 
@@ -83,8 +71,6 @@ function generate(data){
 
         table.appendChild(row);
     });
-
-    console.log(table)
 
     document.body.appendChild(table);
 }

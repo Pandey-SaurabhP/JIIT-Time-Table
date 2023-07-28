@@ -96,10 +96,7 @@ def getBatchDetails(data, key):
                     ans[i[0]].append([i[1], j])
 
     formattedAns = reformat(ans)
-
     formattedAns = list(formattedAns[days.index(day) + 1])
-
-    print(formattedAns)
     
     return formattedAns
 
@@ -121,7 +118,7 @@ def beautifyData(data):
 def loadData():
     data_list = []
     
-    with open('data.csv', mode='r') as file:
+    with open('dataFiles/data.csv', mode='r') as file:
     
         csv_reader = csv.reader(file)
         header = next(csv_reader, None)
@@ -130,6 +127,3 @@ def loadData():
             data_list.append(row)
 
     return beautifyData(data_list)
-
-a = loadData()
-getBatchDetails(a, {'input' : 'F1', 'day' : 'Monday'})

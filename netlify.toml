@@ -1,0 +1,3 @@
+[build]
+command = "app.py"
+publish = "public/"
