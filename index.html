@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src = "scripts/mainScript.js"></script>
+</head>
+<body>
+
+    <div>
+        <select type = 'text' id = 'day'>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select>
+        <button onclick="autoDetect()">Auto</button> 
+    </div>
+    
+    <div>
+        <input type="text" id = 'inp'>
+        <button onclick="postData()">Get Data</button>
+    </div>
+
+    <table id = 'myTable'></table>
+
+
+</body>
+</html>
