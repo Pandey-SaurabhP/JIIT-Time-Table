@@ -48,7 +48,7 @@ def beautifyData(data):
 def loadData():
     data_list = []
     
-    with open('../dataFiles/data.csv', mode='r') as file:
+    with open('dataFiles/data.csv', mode='r') as file:
     
         csv_reader = csv.reader(file)
         header = next(csv_reader, None)
