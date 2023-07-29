@@ -14,7 +14,7 @@ def formatTextData(t, s):
 
     if s[0] == 'L':
         obj.append('Lecture')
-    elif s[1] == 'T':
+    elif s[0] == 'T':
         obj.append('Tutorial')
     else:
         obj.append('Practical')
@@ -62,8 +62,8 @@ def reformat(a):
     ans = []
 
     timeSlots = [[]]
-    for i in range(8):
 
+    for i in range(8):
         startTime = i + 9
         startTime %= 12
 
@@ -87,6 +87,9 @@ def reformat(a):
         for j in a[i]:
             if(len(j) != 1):
                 dict[j[0]] = formatTextData(timeSlots[j[0]], j[1])
+
+                if dict[j[0]][1] == 'Practical':
+                    dict[j[0] + 1] = formatTextData(timeSlots[j[0]], j[1])
 
         tmpPush = []
         for j in dict.keys():
@@ -114,7 +117,6 @@ def getBatchDetails(data, key):
     day = key['day']
 
     batch = isCorrectBatch(batch)
-
     if batch == 'Invalid': return -1
 
     ans = {}
@@ -135,13 +137,12 @@ def getBatchDetails(data, key):
 
     formattedAns = reformat(ans)
 
-    
     formattedAns = list(formattedAns[days.index(day) + 1])
     formattedAns = [['Time', 'Type', 'Subject', 'Classroom', 'Teacher']] + formattedAns
 
     # print(formattedAns)
-    
+
     return formattedAns
 
-data = loadData()
-getBatchDetails(data, {'day' : 'Monday', 'input' : 'F8'})
+# data = loadData()
+# getBatchDetails(data, {'input':'F4', 'day':'Monday'})
