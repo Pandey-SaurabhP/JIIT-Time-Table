@@ -88,7 +88,7 @@ def reformat(a):
             if(len(j) != 1):
                 dict[j[0]] = formatTextData(timeSlots[j[0]], j[1])
 
-                if dict[j[0]][1] == 'Practical':
+                if dict[j[0]][1] == 'Lab':
                     dict[j[0] + 1] = formatTextData(timeSlots[j[0] + 1], j[1])
 
         tmpPush = []
