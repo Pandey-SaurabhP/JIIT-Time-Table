@@ -139,7 +139,7 @@ def getBatchDetails(data, key):
     formattedAns = list(formattedAns[days.index(day) + 1])
     formattedAns = [['Time', 'Type', 'Subject', 'Classroom', 'Teacher']] + formattedAns
 
-    print(formattedAns)
+    # print(formattedAns)
     
     return formattedAns
 
