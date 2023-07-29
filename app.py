@@ -13,7 +13,7 @@ def get_data():
         key = request.get_json()
         batchData = getBatchDetails(data, key)
 
-        print('Received inbound request : ', key)
+        # print('Received inbound request : ', key)
 
         return jsonify((batchData))
 
@@ -21,5 +21,5 @@ def get_data():
         return jsonify(("Aloha"))
 
 if __name__ == '__main__':
-    app.run(debug=False, host = '0.0.0.0')
+    app.run(debug=False)
 

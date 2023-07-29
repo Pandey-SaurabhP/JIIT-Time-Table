@@ -2,8 +2,8 @@ function postData() {
     var inp = document.getElementById('inp');
     var day = document.getElementById('day');
 
-    // const url = 'https://ttjiit.onrender.com/';
-    const url = 'http://127.0.0.1:5000/';
+    const url = 'https://ttjiit.onrender.com/';
+    // const url = 'http://127.0.0.1:5000/';
 
     const data = {
         input: inp.value,
