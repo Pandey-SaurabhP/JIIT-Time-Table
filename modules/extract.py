@@ -17,7 +17,7 @@ def formatTextData(t, s):
     elif s[0] == 'T':
         obj.append('Tutorial')
     else:
-        obj.append('Practical')
+        obj.append('Lab')
 
     subjectData = re.search('\((.*)\)', s)
     obj.append(subjectData.group(1))
@@ -48,7 +48,7 @@ def beautifyData(data):
 def loadData():
     data_list = []
     
-    with open('dataFiles/data.csv', mode='r') as file:
+    with open('../dataFiles/data.csv', mode='r') as file:
     
         csv_reader = csv.reader(file)
         header = next(csv_reader, None)
@@ -89,7 +89,7 @@ def reformat(a):
                 dict[j[0]] = formatTextData(timeSlots[j[0]], j[1])
 
                 if dict[j[0]][1] == 'Practical':
-                    dict[j[0] + 1] = formatTextData(timeSlots[j[0]], j[1])
+                    dict[j[0] + 1] = formatTextData(timeSlots[j[0] + 1], j[1])
 
         tmpPush = []
         for j in dict.keys():
@@ -145,4 +145,4 @@ def getBatchDetails(data, key):
     return formattedAns
 
 # data = loadData()
-# getBatchDetails(data, {'input':'F4', 'day':'Monday'})
+# print(getBatchDetails(data, {'input':'F4', 'day':'Monday'}))
