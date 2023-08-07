@@ -1,8 +1,10 @@
 # import numpy as np
 import csv
 import re
+from modules.abbreviation import loadAbbreviations
 
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+ab = loadAbbreviations()
 
 def formatTextData(t, s):
     s = ''.join(s.split())
@@ -48,7 +50,7 @@ def beautifyData(data):
 def loadData():
     data_list = []
     
-    with open('dataFiles/data.csv', mode='r') as file:
+    with open('dataFiles/sem3.csv', mode='r') as file:
     
         csv_reader = csv.reader(file)
         header = next(csv_reader, None)
@@ -144,5 +146,5 @@ def getBatchDetails(data, key):
 
     return formattedAns
 
-# data = loadData()
-# print(getBatchDetails(data, {'input':'F4', 'day':'Monday'}))
+data = loadData()
+print(getBatchDetails(data, {'input':'F2', 'day':'Monday'}))

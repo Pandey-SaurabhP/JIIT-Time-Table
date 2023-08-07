@@ -3,6 +3,7 @@ body {
     height: 100vh; /* To center vertically as well */
     position: fixed;
     display: contents;
+    width: fit-content  ;
 }
 
 .designation{
