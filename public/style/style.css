@@ -6,6 +6,15 @@ body {
     width: fit-content  ;
 }
 
+#bottomBar{
+    position: absolute;
+    bottom: 10px;
+    width: 99.7%;
+    justify-content: center;
+    font-family: sans-serif;
+    text-align: center;
+}
+
 .designation{
     display: flex;
     justify-content: center; 
@@ -103,7 +112,7 @@ input[type="text"] {
 
 #myTable {
     font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     display: flex;
     justify-content: center;
 }
@@ -126,6 +135,7 @@ input[type="text"] {
     font-size: 14px;
 
     border-radius: 2px;
+    width: 60px;
 }
 
 #myTable tr:hover {
@@ -134,6 +144,7 @@ input[type="text"] {
 
 #myTable td:first-child {
     background-color: #e0f1ff;
+    width: auto;
 }
 
 #myTable tr:first-child {

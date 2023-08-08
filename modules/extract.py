@@ -10,6 +10,8 @@ def formatTextData(t, s):
     s = ''.join(s.split())
     s += '$'
 
+    print(s)
+
     obj = []
 
     obj.append(t)
@@ -106,7 +108,7 @@ def isCorrectBatch(batch):
     batch = ''.join(batch.split())
 
     batches = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 
-             'E1', 'E2', 'E3', 'E4', 'E5', 'E6']
+             'E1', 'E2', 'E3', 'E4', 'E5']
     
     if batch in batches:
         return batch
@@ -147,4 +149,4 @@ def getBatchDetails(data, key):
     return formattedAns
 
 data = loadData()
-print(getBatchDetails(data, {'input':'F2', 'day':'Monday'}))
+print(getBatchDetails(data, {'input':'E5', 'day':'Monday'}))
