@@ -148,5 +148,5 @@ def getBatchDetails(data, key):
 
     return formattedAns
 
-data = loadData()
-print(getBatchDetails(data, {'input':'E5', 'day':'Monday'}))
+# data = loadData()
+# print(getBatchDetails(data, {'input':'E5', 'day':'Monday'}))
