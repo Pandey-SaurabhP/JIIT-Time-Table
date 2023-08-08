@@ -10,7 +10,7 @@ def formatTextData(t, s):
     s = ''.join(s.split())
     s += '$'
 
-    print(s)
+    # print(s)
 
     obj = []
 
