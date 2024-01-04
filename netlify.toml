@@ -1,0 +1,6 @@
+[build]
+  command = "echo 'No build command specified'"
+  functions = "functions"  # Optional:
+
+[dev]
+  port = 8888
